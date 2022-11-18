@@ -23,7 +23,7 @@ class OpencastAPI:
         with open('OpencastAPI/metadata.json', 'r', encoding='utf8') as openfile:
             metadata = json.load(openfile)
 
-            metadata[0]['fields'][0]['value'] = f'{args.location}__{args.camera}_{args.year}.{args.month}.{args.day}__{args.hour}.{args.minutes}'
+            metadata[0]['fields'][0]['value'] = f'{args.location}_{args.camera}_{args.year}.{args.month}.{args.day}_{args.hour}.{args.minutes}'
             metadata[0]['fields'][9]['value'] = f'{args.year}-{args.month}-{args.day}'
             metadata[0]['fields'][10]['value'] = f'{args.hour}:{args.minutes}'
             metadata = json.dumps(metadata).encode('utf8')
