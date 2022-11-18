@@ -1,0 +1,32 @@
+[
+  {
+    "allow": true,
+    "role": "ROLE_USER_RAYANDIEV",
+    "action": "read"
+  },
+  {
+    "allow": true,
+    "role": "ROLE_USER_RAYANDIEV",
+    "action": "write"
+  },
+  {
+    "allow": true,
+    "role": "ROLE_USER_EVENTS_EXPORTER",
+    "action": "read"
+  },
+  {
+    "allow": true,
+    "role": "ROLE_USER_EVENTS_EXPORTER",
+    "action": "write"
+  },
+  {
+    "allow": true,
+    "role": "ROLE_USER_AOBOYARSKIY",
+    "action": "read"
+  },
+  {
+    "allow": true,
+    "role": "ROLE_USER_AOBOYARSKIY",
+    "action": "write"
+  }
+]

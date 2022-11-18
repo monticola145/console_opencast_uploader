@@ -1,0 +1,149 @@
+[
+  {
+    "flavor": "dublincore/episode",
+    "title": "EVENTS.EVENTS.DETAILS.CATALOG.EPISODE",
+    "fields": [
+      {
+        "readOnly": false,
+        "id": "title",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.TITLE",
+        "type": "text",
+        "value": "",
+        "required": true
+      },
+      {
+        "readOnly": false,
+        "id": "subjects",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.SUBJECT",
+        "type": "text",
+        "value": [],
+        "required": false
+      },
+      {
+        "readOnly": false,
+        "id": "description",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.DESCRIPTION",
+        "type": "text_long",
+        "value": "",
+        "required": false
+      },
+      {
+        "translatable": true,
+        "readOnly": false,
+        "id": "language",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.LANGUAGE",
+        "type": "text",
+        "value": "",
+        "required": false
+      },
+      {
+        "readOnly": false,
+        "id": "rightsHolder",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.RIGHTS",
+        "type": "text",
+        "value": "",
+        "required": false
+      },
+      {
+        "translatable": true,
+        "readOnly": false,
+        "id": "license",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.LICENSE",
+        "type": "text",
+        "value": "",
+        "required": false
+      },
+      {
+        "translatable": false,
+        "readOnly": false,
+        "id": "isPartOf",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.SERIES",
+        "type": "text",
+        "value": "6ce50456-5393-45d5-83a8-a887cc416e09",
+        "required": false
+      },
+      {
+        "translatable": false,
+        "readOnly": false,
+        "id": "creator",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.PRESENTERS",
+        "type": "mixed_text",
+        "value": [],
+        "required": false
+      },
+      {
+        "translatable": false,
+        "readOnly": false,
+        "id": "contributor",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.CONTRIBUTORS",
+        "type": "mixed_text",
+        "value": [],
+        "required": false
+      },
+      {
+        "readOnly": false,
+        "id": "startDate",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.START_DATE",
+        "type": "date",
+        "value": "",
+        "required": false
+      },
+      {
+        "readOnly": false,
+        "id": "startTime",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.START_TIME",
+        "type": "time",
+        "value": "",
+        "required": false
+      },
+      {
+        "readOnly": false,
+        "id": "duration",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.DURATION",
+        "type": "text",
+        "value": "",
+        "required": false
+      },
+      {
+        "readOnly": false,
+        "id": "location",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.LOCATION",
+        "type": "text",
+        "value": "",
+        "required": false
+      },
+      {
+        "readOnly": false,
+        "id": "source",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.SOURCE",
+        "type": "text",
+        "value": "",
+        "required": false
+      },
+      {
+        "readOnly": true,
+        "id": "created",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.CREATED",
+        "type": "date",
+        "value": "",
+        "required": false
+      },
+      {
+        "readOnly": true,
+        "id": "publisher",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.PUBLISHER",
+        "type": "text",
+        "value": "",
+        "required": false
+      },
+      {
+        "readOnly": true,
+        "id": "identifier",
+        "label": "EVENTS.EVENTS.DETAILS.METADATA.ID",
+        "type": "text",
+        "value": "",
+        "required": false
+      }
+    ]
+  }
+]
