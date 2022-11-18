@@ -34,18 +34,28 @@ class OpencastAPI:
             processing['workflow'] = os.getenv('OPENCAST_WORKFLOW_ID')
 
             processing = json.dumps(processing)
+        try:
+            body = {
+                "metadata": (None, metadata),
+                "acl": (None, acl),
+                "processing": (None, processing),
+                "presentation": open(args.path[0], 'rb'),
+                "presenter": open(args.path[1], 'rb'),
+            }
 
-        body = {
-            "metadata": (None, metadata),
-            "acl": (None, acl),
-            "processing": (None, processing),
-            "presentation": open(args.path, 'rb')
-        }
+        except IndexError:
+            body = {
+                "metadata": (None, metadata),
+                "acl": (None, acl),
+                "processing": (None, processing),
+                "presentation": open(args.path[0], 'rb'),
+            }
 
         headers = {
             'content-disposition': "form-data",
             'cache-control': "no-cache",
             'Connection': 'close'
         }
+        
         response = requests.post(f'{api_url}/events', files=body, headers=headers, auth=(os.getenv('OPENCAST_API_USER'), os.getenv('OPENCAST_API_PASSWORD')))
         print(response.status_code)

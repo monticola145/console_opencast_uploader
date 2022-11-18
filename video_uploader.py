@@ -12,8 +12,7 @@ parser.add_argument('month', type=int, help='Month of the record')
 parser.add_argument('day', type=int, help='Day of the record')
 parser.add_argument('hour', type=int, help='Hour of the record')
 parser.add_argument('minutes', type=int, help='Minutes of the record')
-parser.add_argument('path', type=str, help='Media path')
-
+parser.add_argument('path', type=str, help='Media path', nargs='+')
 
 args = parser.parse_args()
 
