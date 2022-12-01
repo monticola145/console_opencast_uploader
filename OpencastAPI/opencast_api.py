@@ -24,8 +24,8 @@ class OpencastAPI:
             metadata = json.load(openfile)
 
             metadata[0]['fields'][0]['value'] = f'{args.location}_{args.camera}_{args.year}.{args.month}.{args.day}_{args.hour}.{args.minutes}'
-            metadata[0]['fields'][9]['value'] = f'{args.year}-{args.month}-{args.day}'
-            metadata[0]['fields'][10]['value'] = f'{args.hour}:{args.minutes}'
+            metadata[0]['fields'][9]['value'] = f'{args.year}-{args.month}-{args.day}T{args.hour}:{args.minutes}:00.000Z'
+
             metadata = json.dumps(metadata).encode('utf8')
 
         with open('OpencastAPI/processing.json', 'r') as openfile:
@@ -59,3 +59,5 @@ class OpencastAPI:
         
         response = requests.post(f'{api_url}/events', files=body, headers=headers, auth=(os.getenv('OPENCAST_API_USER'), os.getenv('OPENCAST_API_PASSWORD')))
         print(response.status_code)
+        print(response.text)
+

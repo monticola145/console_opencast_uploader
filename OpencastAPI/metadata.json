@@ -90,14 +90,6 @@
       },
       {
         "readOnly": false,
-        "id": "startTime",
-        "label": "EVENTS.EVENTS.DETAILS.METADATA.START_TIME",
-        "type": "time",
-        "value": "",
-        "required": false
-      },
-      {
-        "readOnly": false,
         "id": "duration",
         "label": "EVENTS.EVENTS.DETAILS.METADATA.DURATION",
         "type": "text",
