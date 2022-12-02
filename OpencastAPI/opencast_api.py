@@ -2,6 +2,7 @@
 import json
 import os
 from os.path import dirname, join
+from datetime import datetime, timedelta
 
 import requests
 from dotenv import load_dotenv
@@ -15,6 +16,15 @@ class OpencastAPI:
         self.api_url = os.getenv('OPENCAST_API_URL')
         self.post_event(args)
 
+    def time_formatter(self, year=None, month=None, day=None, hour=None, minutes=None):
+        return 'T'.join(
+            (str(
+                datetime.strptime(
+                    f'{year}-{month}-{day} {hour}:{minutes}', '%Y-%m-%d %H:%M') + timedelta(hours=-3)
+                ) + '00.000Z'
+            ).split(' ')
+        )
+
     def post_event(self, args=None):
         api_url = os.getenv('OPENCAST_API_URL')
         with open('OpencastAPI/acl.json') as openfile:
@@ -23,8 +33,15 @@ class OpencastAPI:
         with open('OpencastAPI/metadata.json', 'r', encoding='utf8') as openfile:
             metadata = json.load(openfile)
 
-            metadata[0]['fields'][0]['value'] = f'{args.location}_{args.camera}_{args.year}.{args.month}.{args.day}_{args.hour}.{args.minutes}'
-            metadata[0]['fields'][9]['value'] = f'{args.year}-{args.month}-{args.day}T{args.hour}:{args.minutes}:00.000Z'
+            metadata[0]['fields'][0]['value'] = f'{args.location}_{args.camera}_{args.year}.{args.month}.{args.day}_{args.hour}:{args.minutes}'
+            metadata[0]['fields'][9]['value'] = self.time_formatter(
+                year=args.year,
+                month=args.month,
+                day=args.day,
+                hour=args.hour,
+                minutes=args.minutes
+                )
+            metadata[0]['fields'][10]['value'] = f'{args.hour}:{args.minutes}'
 
             metadata = json.dumps(metadata).encode('utf8')
 
